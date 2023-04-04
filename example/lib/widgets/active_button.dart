@@ -1,4 +1,4 @@
-import 'package:example/widgets/Button.dart';
+import 'package:example/widgets/button.dart';
 import 'package:flutter/widgets.dart';
 import 'package:tailstyle/tailstyle.dart';
 
