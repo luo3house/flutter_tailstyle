@@ -1,0 +1,51 @@
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+    
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.3.0'
+          channel: 'stable'
+      - name: Install dependencies
+        run: flutter pub get
+      - name: Build web
+        run: cd example && flutter build web --base-href=/flutter_tailstyle/
+      - name: Upload Build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: dist
+          path: example/build/web
+  
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+     name: github-pages
+     url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Setup Pages
+        uses: actions/configure-pages@v2
+      - name: Download Build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: dist
+          path: '.'
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: '.'
+      - name: Deploy GitHub Pages site
+        id: deployment
+        uses: actions/deploy-pages@v1
