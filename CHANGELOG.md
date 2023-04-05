@@ -1,3 +1,7 @@
+## 1.1.0
+
+* Add direct setters for customize cases.
+
 ## 1.0.0
 
 * Release major

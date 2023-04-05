@@ -5,11 +5,13 @@
 
 [Live Demo](https://luo3house.github.io/flutter_tailstyle/)
 
-🌼 TailStyle is a Flutter utility for speeding up Prototype Apps.
+🌼 TailStyle is a Flutter utility speeds up building Apps.
 
 ## Shrink code
 
-Type less from the detailed code below:
+TailStyle shrinks your code by many packed style definitions.
+
+before:
 
 ```dart
 Text(
@@ -22,13 +24,13 @@ Text(
 );
 ```
 
-to
+after:
 
 ```dart
-TailTypo().line_through().text_xl().Text("Hello World");
+TailTypo().line_through().text_xl().font_bold().Text("Hello World");
 ```
 
-And also keep friendly to Dart Formatter and Code Readability.
+And also supports being friendly on Dart Formatter and Code Readability.
 
 ```dart
 TailBox().mb_2().p_2().border().rounded().as((styled) {
@@ -38,23 +40,23 @@ TailBox().mb_2().p_2().border().rounded().as((styled) {
 });
 ```
 
-## Follows WindiCSS 💨
+## Follow WindiCSS 💨
 
-TailStyle model follows naming of [WindiCSS](https://windicss.org/) and links styles between sementic keywords and flutter views as possible.
+TailStyle follows naming of [WindiCSS](https://windicss.org/) and links styles between sementic keywords and flutter views as possible.
 
 ```dart
 // Generate Text from Typography Style Model
-TailTypo().Text("Hello World");
+TailTypo().text_bold().Text("Hello World");
 
 // Generate Container from Box Style Model
-TailBox().Container(width: 100, height: 100);
+TailBox().p_4().Container(width: 100, height: 100);
 // Generate SizedBox from Box Style Model
-TailBox().SizedBox(width: 100, height: 100);
+TailBox().mb_2().SizedBox(width: 100, height: 100);
 ```
 
 ## Extend Tail model on demand
 
-Since TailStyle models based on builder are plain object. You can extend them by yourself.
+Since TailStyle models based on builder are plain object. You can extend them on your own.
 
 ```dart
 import 'package:flutter/widgets.dart' show Padding;
@@ -78,7 +80,7 @@ extension TailBox2PaddingExt on TailBox {
 
 ## The case not suggested to use TailStyle
 
-It is not suggested to use TailStyle to replace Constant widgets.
+Not suggested to use TailStyle to replace constant widgets.
 
 ```dart
 const Text(
@@ -90,6 +92,8 @@ const Text(
   ),
 );
 ```
+
+And in some case of deeply style customization, TailStyle may be not a solution.
 
 ## Acknowledgement
 

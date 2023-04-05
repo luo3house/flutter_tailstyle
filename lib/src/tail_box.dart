@@ -28,6 +28,7 @@ class TailBox {
   TailBox bg_transparent() => chain(this, () => backgroundColor = TailColors.transparent);
   TailBox bg(Color colour) => chain(this, () => backgroundColor = colour);
   // Gradients
+  TailBox bg_gradient(Gradient value) => chain(this, () => gradient = value);
   TailBox bg_gradient_to_t(List<Color> stops) => chain(
       this,
       () => gradient = LinearGradient(
@@ -140,8 +141,8 @@ class TailBox {
         rounded_br_4xl();
       });
   // Border Radius TL
+  TailBox rounded_tl([double? value]) => chain(this, () => borderRadiusTL = Radius.circular(value ?? (0.25).rem));
   TailBox rounded_tl_sm() => chain(this, () => borderRadiusTL = Radius.circular((0.125).rem));
-  TailBox rounded_tl() => chain(this, () => borderRadiusTL = Radius.circular((0.25).rem));
   TailBox rounded_tl_md() => chain(this, () => borderRadiusTL = Radius.circular((0.375).rem));
   TailBox rounded_tl_lg() => chain(this, () => borderRadiusTL = Radius.circular((0.5).rem));
   TailBox rounded_tl_xl() => chain(this, () => borderRadiusTL = Radius.circular((0.75).rem));
@@ -149,8 +150,8 @@ class TailBox {
   TailBox rounded_tl_3xl() => chain(this, () => borderRadiusTL = Radius.circular((1.5).rem));
   TailBox rounded_tl_4xl() => chain(this, () => borderRadiusTL = Radius.circular((2.0).rem));
   // Border Radius TR
+  TailBox rounded_tr([double? value]) => chain(this, () => borderRadiusTR = Radius.circular(value ?? (0.25).rem));
   TailBox rounded_tr_sm() => chain(this, () => borderRadiusTR = Radius.circular((0.125).rem));
-  TailBox rounded_tr() => chain(this, () => borderRadiusTR = Radius.circular((0.25).rem));
   TailBox rounded_tr_md() => chain(this, () => borderRadiusTR = Radius.circular((0.375).rem));
   TailBox rounded_tr_lg() => chain(this, () => borderRadiusTR = Radius.circular((0.5).rem));
   TailBox rounded_tr_xl() => chain(this, () => borderRadiusTR = Radius.circular((0.75).rem));
@@ -158,8 +159,8 @@ class TailBox {
   TailBox rounded_tr_3xl() => chain(this, () => borderRadiusTR = Radius.circular((1.5).rem));
   TailBox rounded_tr_4xl() => chain(this, () => borderRadiusTR = Radius.circular((2.0).rem));
   // Border Radius BL
+  TailBox rounded_bl([double? value]) => chain(this, () => borderRadiusBL = Radius.circular(value ?? (0.25).rem));
   TailBox rounded_bl_sm() => chain(this, () => borderRadiusBL = Radius.circular((0.125).rem));
-  TailBox rounded_bl() => chain(this, () => borderRadiusBL = Radius.circular((0.25).rem));
   TailBox rounded_bl_md() => chain(this, () => borderRadiusBL = Radius.circular((0.375).rem));
   TailBox rounded_bl_lg() => chain(this, () => borderRadiusBL = Radius.circular((0.5).rem));
   TailBox rounded_bl_xl() => chain(this, () => borderRadiusBL = Radius.circular((0.75).rem));
@@ -167,8 +168,8 @@ class TailBox {
   TailBox rounded_bl_3xl() => chain(this, () => borderRadiusBL = Radius.circular((1.5).rem));
   TailBox rounded_bl_4xl() => chain(this, () => borderRadiusBL = Radius.circular((2.0).rem));
   // Border Radius BR
+  TailBox rounded_br([double? value]) => chain(this, () => borderRadiusBR = Radius.circular(value ?? (0.25).rem));
   TailBox rounded_br_sm() => chain(this, () => borderRadiusBR = Radius.circular((0.125).rem));
-  TailBox rounded_br() => chain(this, () => borderRadiusBR = Radius.circular((0.25).rem));
   TailBox rounded_br_md() => chain(this, () => borderRadiusBR = Radius.circular((0.375).rem));
   TailBox rounded_br_lg() => chain(this, () => borderRadiusBR = Radius.circular((0.5).rem));
   TailBox rounded_br_xl() => chain(this, () => borderRadiusBR = Radius.circular((0.75).rem));
@@ -241,6 +242,7 @@ class TailBox {
   TailBox border_b_5([Color? colour, BorderStyle? style]) => chain(this, () => border_b(colour, 5, style));
 
   // Box Shadow
+  TailBox shadow(Iterable<Shadow> value) => chain(this, () => boxShadow = List.from(value));
   TailBox shadow_none() => chain(this, () => boxShadow = []);
   TailBox shadow_default([Color? colour]) => chain(
       this,
