@@ -1,3 +1,7 @@
+## 1.1.1
+
+* Support nullable setter value forward
+
 ## 1.1.0
 
 * Add direct setters for customize cases.
