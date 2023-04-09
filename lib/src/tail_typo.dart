@@ -20,7 +20,7 @@ class TailTypo {
   Color? caretColor;
 
   // Font Size
-  TailTypo font_size(double value) => chain(this, () => fontSize = value);
+  TailTypo font_size(double? value) => chain(this, () => fontSize = value);
   TailTypo text_xs() => chain(this, () => fontSize = (0.75).rem);
   TailTypo text_sm() => chain(this, () => fontSize = (0.875).rem);
   TailTypo text_base() => chain(this, () => fontSize = (1.0).rem);
@@ -34,11 +34,11 @@ class TailTypo {
   TailTypo text_7xl() => chain(this, () => fontSize = (4.5).rem);
   TailTypo text_8xl() => chain(this, () => fontSize = (6.0).rem);
   // Font Style
-  TailTypo font_style(FontStyle value) => chain(this, () => fontStyle = value);
+  TailTypo font_style(FontStyle? value) => chain(this, () => fontStyle = value);
   TailTypo italic() => chain(this, () => fontStyle = FontStyle.italic);
   TailTypo not_italic() => chain(this, () => fontStyle = FontStyle.normal);
   // Font Weight
-  TailTypo font_weight(FontWeight value) => chain(this, () => fontWeight = value);
+  TailTypo font_weight(FontWeight? value) => chain(this, () => fontWeight = value);
   TailTypo font_thin() => chain(this, () => fontWeight = FontWeight.w100);
   TailTypo font_extralight() => chain(this, () => fontWeight = FontWeight.w200);
   TailTypo font_light() => chain(this, () => fontWeight = FontWeight.w300);
@@ -49,7 +49,7 @@ class TailTypo {
   TailTypo font_extrabold() => chain(this, () => fontWeight = FontWeight.w800);
   TailTypo font_black() => chain(this, () => fontWeight = FontWeight.w900);
   // Letter Spacing
-  TailTypo letter_spacing(double value) => chain(this, () => letterSpacing = value);
+  TailTypo letter_spacing(double? value) => chain(this, () => letterSpacing = value);
   TailTypo tracking_tighter() => chain(this, () => letterSpacing = (-0.05).rem);
   TailTypo tracking_tight() => chain(this, () => letterSpacing = (-0.025).rem);
   TailTypo tracking_normal() => chain(this, () => letterSpacing = (0.0).rem);
@@ -57,7 +57,7 @@ class TailTypo {
   TailTypo tracking_wider() => chain(this, () => letterSpacing = (0.05).rem);
   TailTypo tracking_widest() => chain(this, () => letterSpacing = (0.1).rem);
   // Line Height
-  TailTypo line_height(double value) => chain(this, () => height = value);
+  TailTypo line_height(double? value) => chain(this, () => height = value);
   TailTypo leading_none() => chain(this, () => height = 1.0);
   TailTypo leading_tight() => chain(this, () => height = 1.25);
   TailTypo leading_sung() => chain(this, () => height = 1.375);
@@ -72,32 +72,32 @@ class TailTypo {
   TailTypo leading_5() => chain(this, () => height = (1.25).rem);
   TailTypo leading_6() => chain(this, () => height = (1.5).rem);
   // Text Align
-  TailTypo text_align(TextAlign value) => chain(this, () => textAlign = value);
+  TailTypo text_align(TextAlign? value) => chain(this, () => textAlign = value);
   TailTypo text_left() => chain(this, () => textAlign = TextAlign.left);
   TailTypo text_center() => chain(this, () => textAlign = TextAlign.center);
   TailTypo text_right() => chain(this, () => textAlign = TextAlign.right);
   TailTypo text_justify() => chain(this, () => textAlign = TextAlign.justify);
   // Text Color
-  TailTypo text_color(Color colour) => chain(this, () => color = colour);
+  TailTypo text_color(Color? colour) => chain(this, () => color = colour);
   TailTypo text_transparent() => chain(this, () => color = TailColors.transparent);
   // Text Decoration
-  TailTypo text_decoration(TextDecoration value) => chain(this, () => decoration = value);
+  TailTypo text_decoration(TextDecoration? value) => chain(this, () => decoration = value);
   TailTypo underline() => chain(this, () => decoration = TextDecoration.underline);
   TailTypo overline() => chain(this, () => decoration = TextDecoration.overline);
   TailTypo line_through() => chain(this, () => decoration = TextDecoration.lineThrough);
   TailTypo no_underline() => chain(this, () => decoration = TextDecoration.none);
   // Text Decoration Color
-  TailTypo decoration_color(Color colour) => chain(this, () => decorationColor = colour);
+  TailTypo decoration_color(Color? colour) => chain(this, () => decorationColor = colour);
   TailTypo decoration_transparent() => chain(this, () => decorationColor = TailColors.transparent);
   // Text Decoration Style
-  TailTypo decoration_style(TextDecorationStyle value) => chain(this, () => decorationStyle = value);
+  TailTypo decoration_style(TextDecorationStyle? value) => chain(this, () => decorationStyle = value);
   TailTypo decoration_solid() => chain(this, () => decorationStyle = TextDecorationStyle.solid);
   TailTypo decoration_double() => chain(this, () => decorationStyle = TextDecorationStyle.double);
   TailTypo decoration_dotted() => chain(this, () => decorationStyle = TextDecorationStyle.dotted);
   TailTypo decoration_dashed() => chain(this, () => decorationStyle = TextDecorationStyle.dashed);
   TailTypo decoration_wavy() => chain(this, () => decorationStyle = TextDecorationStyle.wavy);
   // Text Decoration Thickness
-  TailTypo decoration_thickness(double value) => chain(this, () => decorationThickness = value);
+  TailTypo decoration_thickness(double? value) => chain(this, () => decorationThickness = value);
   TailTypo decoration_0() => chain(this, () => decorationThickness = 0);
   TailTypo decoration_1() => chain(this, () => decorationThickness = 1);
   TailTypo decoration_2() => chain(this, () => decorationThickness = 1);
@@ -111,7 +111,7 @@ class TailTypo {
   TailTypo decoration_3px() => chain(this, () => decorationThickness = 3);
   TailTypo decoration_0_3rem() => chain(this, () => decorationThickness = (0.3).rem);
   // Text Shadow
-  TailTypo text_shadow(Iterable<Shadow> value) => chain(this, () => shadows = List.from(value));
+  TailTypo text_shadow(Iterable<Shadow>? value) => chain(this, () => shadows = value != null ? List.from(value) : null);
   TailTypo text_shadow_sm() => chain(
       this,
       () => shadows = [
@@ -138,7 +138,7 @@ class TailTypo {
   TailTypo text_shadow_none() => chain(this, () => shadows = []);
 
   // Text Overflow
-  TailTypo text_overflow(TextOverflow value) => chain(this, () => overflow = value);
+  TailTypo text_overflow(TextOverflow? value) => chain(this, () => overflow = value);
   TailTypo truncate() => chain(this, () => overflow = TextOverflow.ellipsis);
   TailTypo overflow_ellipsis() => chain(this, () => overflow = TextOverflow.ellipsis);
   TailTypo overflow_clip() => chain(this, () => overflow = TextOverflow.clip);

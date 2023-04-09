@@ -26,9 +26,9 @@ class TailBox {
 
   // Background
   TailBox bg_transparent() => chain(this, () => backgroundColor = TailColors.transparent);
-  TailBox bg(Color colour) => chain(this, () => backgroundColor = colour);
+  TailBox bg(Color? colour) => chain(this, () => backgroundColor = colour);
   // Gradients
-  TailBox bg_gradient(Gradient value) => chain(this, () => gradient = value);
+  TailBox bg_gradient(Gradient? value) => chain(this, () => gradient = value);
   TailBox bg_gradient_to_t(List<Color> stops) => chain(
       this,
       () => gradient = LinearGradient(
@@ -242,7 +242,7 @@ class TailBox {
   TailBox border_b_5([Color? colour, BorderStyle? style]) => chain(this, () => border_b(colour, 5, style));
 
   // Box Shadow
-  TailBox shadow(Iterable<Shadow> value) => chain(this, () => boxShadow = List.from(value));
+  TailBox shadow(Iterable<Shadow>? value) => chain(this, () => boxShadow = value != null ? List.from(value) : null);
   TailBox shadow_none() => chain(this, () => boxShadow = []);
   TailBox shadow_default([Color? colour]) => chain(
       this,
