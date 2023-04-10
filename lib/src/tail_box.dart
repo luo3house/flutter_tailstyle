@@ -98,11 +98,11 @@ class TailBox {
         rounded_bl_sm();
         rounded_br_sm();
       });
-  TailBox rounded() => chain(this, () {
-        rounded_tl();
-        rounded_tr();
-        rounded_bl();
-        rounded_br();
+  TailBox rounded([double? value]) => chain(this, () {
+        rounded_tl(value ?? (0.25).rem);
+        rounded_tr(value ?? (0.25).rem);
+        rounded_bl(value ?? (0.25).rem);
+        rounded_br(value ?? (0.25).rem);
       });
   TailBox rounded_md() => chain(this, () {
         rounded_tl_md();

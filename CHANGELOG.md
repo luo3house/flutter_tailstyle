@@ -1,3 +1,7 @@
+## 1.1.2
+
+* Support custom value for `rounded()`
+
 ## 1.1.1
 
 * Support nullable setter value forward
