@@ -1,3 +1,7 @@
+## 1.1.3
+
+* Add `clone()` for models.
+
 ## 1.1.2
 
 * Support custom value for `rounded()`

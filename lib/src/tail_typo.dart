@@ -19,6 +19,24 @@ class TailTypo {
   TextAlign? textAlign;
   Color? caretColor;
 
+  TailTypo clone() {
+    return TailTypo()
+      ..fontSize = fontSize
+      ..fontStyle = fontStyle
+      ..fontWeight = fontWeight
+      ..letterSpacing = letterSpacing
+      ..height = height
+      ..color = color
+      ..decoration = decoration
+      ..decorationColor = decorationColor
+      ..decorationStyle = decorationStyle
+      ..decorationThickness = decorationThickness
+      ..shadows = shadows
+      ..overflow = overflow
+      ..textAlign = textAlign
+      ..caretColor = caretColor;
+  }
+
   // Font Size
   TailTypo font_size(double? value) => chain(this, () => fontSize = value);
   TailTypo text_xs() => chain(this, () => fontSize = (0.75).rem);

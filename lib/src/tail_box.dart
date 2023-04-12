@@ -24,6 +24,29 @@ class TailBox {
   double? marginR;
   double? marginB;
 
+  TailBox clone() {
+    return TailBox()
+      ..backgroundColor = backgroundColor
+      ..gradient = gradient
+      ..borderRadiusTL = borderRadiusTL
+      ..borderRadiusTR = borderRadiusTR
+      ..borderRadiusBL = borderRadiusBL
+      ..borderRadiusBR = borderRadiusBR
+      ..borderL = borderL
+      ..borderT = borderT
+      ..borderR = borderR
+      ..borderB = borderB
+      ..boxShadow = boxShadow
+      ..paddingL = paddingL
+      ..paddingT = paddingT
+      ..paddingR = paddingR
+      ..paddingB = paddingB
+      ..marginL = marginL
+      ..marginT = marginT
+      ..marginR = marginR
+      ..marginB = marginB;
+  }
+
   // Background
   TailBox bg_transparent() => chain(this, () => backgroundColor = TailColors.transparent);
   TailBox bg(Color? colour) => chain(this, () => backgroundColor = colour);
