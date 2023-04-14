@@ -1,3 +1,7 @@
+## 1.1.5
+
+* Fix missing radius when border is all null. (introduced at 1.1.4)
+
 ## 1.1.4
 
 * Fix: should not apply border radius until all borders presented. When borders are not unique and border radius is set, the engine throws exception.

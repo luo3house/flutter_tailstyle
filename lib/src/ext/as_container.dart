@@ -27,6 +27,7 @@ extension TailBox2ContainerExt on TailBox {
     Clip clipBehavior = Clip.none,
   }) {
     final allBorderPresented = borderL != null && borderT != null && borderR != null && borderB != null;
+    final allBorderNull = borderL == null && borderT == null && borderR == null && borderB == null;
     return StyledContainer(
       padding: EdgeInsets.only(
         left: paddingL ?? 0,
@@ -50,7 +51,7 @@ extension TailBox2ContainerExt on TailBox {
           right: borderR ?? BorderSide.none,
           bottom: borderB ?? BorderSide.none,
         ),
-        borderRadius: allBorderPresented
+        borderRadius: allBorderPresented || allBorderNull
             ? BorderRadius.only(
                 topLeft: borderRadiusTL ?? Radius.zero,
                 topRight: borderRadiusTR ?? Radius.zero,
