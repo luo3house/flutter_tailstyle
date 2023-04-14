@@ -1,3 +1,7 @@
+## 1.1.4
+
+* Fix: should not apply border radius until all borders presented. When borders are not unique and border radius is set, the engine throws exception.
+
 ## 1.1.3
 
 * Add `clone()` for models.

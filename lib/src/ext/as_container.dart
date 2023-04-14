@@ -26,6 +26,7 @@ extension TailBox2ContainerExt on TailBox {
     Widget? child = const SizedBox(),
     Clip clipBehavior = Clip.none,
   }) {
+    final allBorderPresented = borderL != null && borderT != null && borderR != null && borderB != null;
     return StyledContainer(
       padding: EdgeInsets.only(
         left: paddingL ?? 0,
@@ -49,12 +50,14 @@ extension TailBox2ContainerExt on TailBox {
           right: borderR ?? BorderSide.none,
           bottom: borderB ?? BorderSide.none,
         ),
-        borderRadius: BorderRadius.only(
-          topLeft: borderRadiusTL ?? Radius.zero,
-          topRight: borderRadiusTR ?? Radius.zero,
-          bottomLeft: borderRadiusBL ?? Radius.zero,
-          bottomRight: borderRadiusBR ?? Radius.zero,
-        ),
+        borderRadius: allBorderPresented
+            ? BorderRadius.only(
+                topLeft: borderRadiusTL ?? Radius.zero,
+                topRight: borderRadiusTR ?? Radius.zero,
+                bottomLeft: borderRadiusBL ?? Radius.zero,
+                bottomRight: borderRadiusBR ?? Radius.zero,
+              )
+            : null,
       ),
       width: width,
       height: height,
