@@ -29,6 +29,7 @@ extension TailTypo2TextExt on TailTypo {
         textWidthBasis: textWidthBasis,
         textHeightBehavior: textHeightBehavior,
         selectionColor: caretColor,
+        textAlign: textAlign,
         style: TextStyle(),
       );
 

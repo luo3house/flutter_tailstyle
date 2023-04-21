@@ -1,3 +1,7 @@
+## 1.1.6
+
+* Fix Typo missing textAlign
+
 ## 1.1.5
 
 * Fix missing radius when border is all null. (introduced at 1.1.4)
