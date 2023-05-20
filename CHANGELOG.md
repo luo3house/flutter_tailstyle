@@ -1,3 +1,7 @@
+## 1.1.7
+
+* Support generating BorderRadius
+
 ## 1.1.6
 
 * Fix Typo missing textAlign

@@ -1,20 +1,10 @@
 import 'package:flutter/widgets.dart';
+import 'package:tailstyle/src/ext/as_box_decoration.dart';
 import 'package:tailstyle/src/tail_box.dart';
 
 typedef StyledContainer = Container;
 
 extension TailBox2ContainerExt on TailBox {
-  p() {
-    return Padding(
-      padding: EdgeInsets.only(
-        left: paddingL ?? 0,
-        top: paddingT ?? 0,
-        right: paddingR ?? 0,
-        bottom: paddingB ?? 0,
-      ),
-    );
-  }
-
   StyledContainer Container({
     Key? key,
     Alignment? alignment,
@@ -45,20 +35,8 @@ extension TailBox2ContainerExt on TailBox {
         color: backgroundColor,
         boxShadow: boxShadow,
         gradient: gradient,
-        border: Border(
-          left: borderL ?? BorderSide.none,
-          top: borderT ?? BorderSide.none,
-          right: borderR ?? BorderSide.none,
-          bottom: borderB ?? BorderSide.none,
-        ),
-        borderRadius: allBorderPresented || allBorderNull
-            ? BorderRadius.only(
-                topLeft: borderRadiusTL ?? Radius.zero,
-                topRight: borderRadiusTR ?? Radius.zero,
-                bottomLeft: borderRadiusBL ?? Radius.zero,
-                bottomRight: borderRadiusBR ?? Radius.zero,
-              )
-            : null,
+        border: this.Border(),
+        borderRadius: allBorderPresented || allBorderNull ? this.BorderRadius() : null,
       ),
       width: width,
       height: height,
