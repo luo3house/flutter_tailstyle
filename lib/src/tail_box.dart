@@ -390,7 +390,7 @@ class TailBox {
   TailBox mb_8() => chain(this, () => mb((2.0).rem));
   TailBox mb_10() => chain(this, () => mb((2.5).rem));
 
-  T as<T>(T Function(TailBox styled) fn) {
+  T as<T>(T Function(TailBox s) fn) {
     return fn(this);
   }
 }

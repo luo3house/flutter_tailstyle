@@ -16,8 +16,6 @@ extension TailBox2ContainerExt on TailBox {
     Widget? child = const SizedBox(),
     Clip clipBehavior = Clip.none,
   }) {
-    final allBorderPresented = borderL != null && borderT != null && borderR != null && borderB != null;
-    final allBorderNull = borderL == null && borderT == null && borderR == null && borderB == null;
     return StyledContainer(
       padding: EdgeInsets.only(
         left: paddingL ?? 0,
@@ -31,13 +29,7 @@ extension TailBox2ContainerExt on TailBox {
         right: marginR ?? 0,
         bottom: marginB ?? 0,
       ),
-      decoration: BoxDecoration(
-        color: backgroundColor,
-        boxShadow: boxShadow,
-        gradient: gradient,
-        border: this.Border(),
-        borderRadius: allBorderPresented || allBorderNull ? this.BorderRadius() : null,
-      ),
+      decoration: this.BoxDecoration(),
       width: width,
       height: height,
       constraints: constraints,

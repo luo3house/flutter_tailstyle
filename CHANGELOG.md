@@ -1,3 +1,7 @@
+## 1.1.8
+
+* Support generating BoxDecoration
+
 ## 1.1.7
 
 * Support generating BorderRadius

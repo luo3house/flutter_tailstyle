@@ -3,6 +3,7 @@ import 'package:tailstyle/src/tail_box.dart';
 
 typedef StyledBorderRadius = BorderRadius;
 typedef StyledBorder = Border;
+typedef StyledBoxDecoration = BoxDecoration;
 
 extension TailBox2BoxDecorationExt on TailBox {
   StyledBorderRadius BorderRadius() {
@@ -20,6 +21,18 @@ extension TailBox2BoxDecorationExt on TailBox {
       top: borderT ?? BorderSide.none,
       right: borderR ?? BorderSide.none,
       bottom: borderB ?? BorderSide.none,
+    );
+  }
+
+  StyledBoxDecoration BoxDecoration() {
+    final allBorderPresented = borderL != null && borderT != null && borderR != null && borderB != null;
+    final allBorderNull = borderL == null && borderT == null && borderR == null && borderB == null;
+    return StyledBoxDecoration(
+      color: backgroundColor,
+      boxShadow: boxShadow,
+      gradient: gradient,
+      border: Border(),
+      borderRadius: allBorderPresented || allBorderNull ? BorderRadius() : null,
     );
   }
 }

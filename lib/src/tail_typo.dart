@@ -164,7 +164,7 @@ class TailTypo {
   // Caret Color
   TailTypo caret(Color? color) => chain(this, () => caretColor = color);
 
-  T as<T>(T Function(TailTypo styled) fn) {
+  T as<T>(T Function(TailTypo s) fn) {
     return fn(this);
   }
 }
