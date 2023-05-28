@@ -1,6 +1,8 @@
 import 'package:flutter/widgets.dart';
-import 'package:tailstyle/src/ext/as_box_decoration.dart';
 import 'package:tailstyle/src/tail_box.dart';
+
+import 'as_box_decoration.dart';
+export 'as_box_decoration.dart';
 
 typedef StyledContainer = Container;
 

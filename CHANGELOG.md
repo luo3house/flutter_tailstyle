@@ -1,3 +1,7 @@
+## 1.1.9
+
+* Export ExtBoxDecoration
+
 ## 1.1.8
 
 * Support generating BoxDecoration
