@@ -25,14 +25,14 @@ extension TailBox2BoxDecorationExt on TailBox {
   }
 
   StyledBoxDecoration BoxDecoration() {
-    final allBorderPresented = borderL != null && borderT != null && borderR != null && borderB != null;
+    final allBorderUniform = borderL == borderT && borderT == borderR && borderR == borderB;
     final allBorderNull = borderL == null && borderT == null && borderR == null && borderB == null;
     return StyledBoxDecoration(
       color: backgroundColor,
       boxShadow: boxShadow,
       gradient: gradient,
       border: Border(),
-      borderRadius: allBorderPresented || allBorderNull ? BorderRadius() : null,
+      borderRadius: allBorderUniform || allBorderNull ? BorderRadius() : null,
     );
   }
 }
