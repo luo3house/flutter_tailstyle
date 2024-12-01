@@ -38,6 +38,7 @@ extension TailBox2ContainerExt on TailBox {
       transform: transform,
       transformAlignment: transformAlignment,
       clipBehavior: clipBehavior,
+      alignment: alignment,
       child: child,
     );
   }

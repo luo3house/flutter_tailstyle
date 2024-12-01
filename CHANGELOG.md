@@ -1,3 +1,7 @@
+## 1.1.11
+
+* Fix: Add alignment for styled container
+
 ## 1.1.10
 
 * Fix uniform border for radius
